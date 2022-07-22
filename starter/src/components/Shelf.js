@@ -16,12 +16,8 @@ const Shelf = ({ shelfName, shelfChanger, books }) => {
             ) {
               return (
                 <Book
-                  id={book.id}
                   key={book.id}
-                  author={book.authors}
-                  title={book.title}
-                  url={book.imageLinks.thumbnail}
-                  shelf={book.shelf}
+                  book={book}
                   handler={shelfChanger}
                 />
               );
@@ -29,12 +25,8 @@ const Shelf = ({ shelfName, shelfChanger, books }) => {
             if (book.shelf === "wantToRead" && shelfName === "Want to Read") {
               return (
                 <Book
-                  id={book.id}
                   key={book.id}
-                  author={book.authors}
-                  title={book.title}
-                  url={book.imageLinks.thumbnail}
-                  shelf={book.shelf}
+                  book={book}
                   handler={shelfChanger}
                 />
               );
@@ -42,12 +34,8 @@ const Shelf = ({ shelfName, shelfChanger, books }) => {
             if (book.shelf === "read" && shelfName === "Read") {
               return (
                 <Book
-                  id={book.id}
                   key={book.id}
-                  author={book.authors}
-                  title={book.title}
-                  url={book.imageLinks.thumbnail}
-                  shelf={book.shelf}
+                  book={book}
                   handler={shelfChanger}
                 />
               );

@@ -182,13 +182,28 @@ body,
 /* book cover */
 
 .book-cover {
+
+  cursor: pointer;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   background: #eee;
   border-radius: 1rem;
+}
+
+.book-cover:hover{
+  transform: scale(103%);
+  transition: all 0.2s linear;
 }
 
 .book-cover-title {
   padding: 20px 10px 0;
   text-align: center;
   font-size: 0.8em;
+}
+
+@keyframes error {
+  
+  50%{
+    opacity: 0
+  }
+  
 }

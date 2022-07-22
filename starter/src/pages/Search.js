@@ -9,8 +9,10 @@ const Search = ({ books }) => {
   const [storeBooks, setStoreBooks] = useState([]);
 
   const updateSearch = (search) => {
-    setSearch(search.trim());
+    setSearch(search);
   };
+
+  const showingBooks = storeBooks;
 
   const changeHandler = (newBookShelf, id) => {
     storeBooks.map((book) => {
@@ -28,8 +30,9 @@ const Search = ({ books }) => {
   useEffect(() => {
     const searchedBooks = async () => {
       let res;
-      search !== "" && (res = await API.search(search));
+      search!== ""&& (res = await API.search(search));
       if (res) {
+        console.log(res);
         Array.from(res).map((book) => {
           return (book.shelf = "none");
         });
@@ -52,13 +55,6 @@ const Search = ({ books }) => {
     searchedBooks();
   }, [search]);
 
-  const showingBooks =
-    (search==="" && storeBooks.length === 0)
-      ? []
-      : (Array.from(storeBooks).filter((b) =>
-          b.title.toLowerCase().includes(search.toLowerCase())
-        ));
-
   return (
     <div className="search-books">
       <div className="search-books-bar">
@@ -76,16 +72,13 @@ const Search = ({ books }) => {
       </div>
       <div className="search-books-results">
         <ol className="books-grid">
-          {showingBooks.length > 0 ? (
+          {
+          showingBooks.length > 0 ? (
             Array.from(showingBooks).map((book) => {
               return (
                 <Book
-                  id={book.id}
                   key={book.id}
-                  author={book.authors}
-                  title={book.title}
-                  url={book.imageLinks ? book.imageLinks.thumbnail : ""}
-                  shelf={book.shelf}
+                  book={book}
                   handler={changeHandler}
                 />
               );
