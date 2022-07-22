@@ -1,14 +1,13 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-const Book = ({ id, author, title, url, handler ,shelf}) => {
+const Book = ({ id, author, title, url, handler ,shelf }) => {
+  
 
   const handleChange = (event) => {
     const newState = event.target.value
     handler (newState,id);
   };
-
- 
-
 
   return (
     <li>
@@ -41,4 +40,12 @@ const Book = ({ id, author, title, url, handler ,shelf}) => {
   );
 };
 
+Book.propTypes = {
+  id: PropTypes.string.isRequired,
+  author: PropTypes.array.isRequired,
+  title: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  handler: PropTypes.func.isRequired,
+  shelf: PropTypes.string.isRequired
+};
 export default Book;

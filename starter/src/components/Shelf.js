@@ -1,5 +1,6 @@
 import React from "react";
 import Book from "./Book";
+import PropTypes from "prop-types";
 
 
 const Shelf = ({ shelfName,shelfChanger,books }) => {
@@ -20,7 +21,7 @@ const Shelf = ({ shelfName,shelfChanger,books }) => {
                 <Book
                   id={book.id}
                   key={book.id}
-                  author={book.authors[0]}
+                  author={book.authors}
                   title={book.title}
                   url={book.imageLinks.thumbnail}
                   shelf ={book.shelf}
@@ -33,7 +34,7 @@ const Shelf = ({ shelfName,shelfChanger,books }) => {
                 <Book
                   id={book.id}
                   key={book.id}
-                  author={book.authors[0]}
+                  author={book.authors}
                   title={book.title}
                   url={book.imageLinks.thumbnail}
                   shelf ={book.shelf}
@@ -46,7 +47,7 @@ const Shelf = ({ shelfName,shelfChanger,books }) => {
                 <Book
                   id={book.id}
                   key={book.id}
-                  author={book.authors[0]}
+                  author={book.authors}
                   title={book.title}
                   url={book.imageLinks.thumbnail}
                   shelf ={book.shelf}
@@ -62,6 +63,12 @@ const Shelf = ({ shelfName,shelfChanger,books }) => {
   );
 };
 export default Shelf;
+
+Book.propTypes = {
+  shelfName: PropTypes.string,
+  shelfChanger: PropTypes.func,
+  books: PropTypes.array
+};
 
 /*
 allowAnonLogging: true
