@@ -6,7 +6,6 @@ This my attempt for Udacity's React Fundamentals Cross-Skilling Project
 
 
 ## Instractions 
-
 To get started developing right away:
 
 - install all project dependencies with `npm install`
@@ -33,6 +32,13 @@ src
     ├── index.css 
     └── index.js
 ```
+## Description
+MyReads app is designed to arrange your books into different shelves as desired
+- Currently Reading
+- Want To Read
+- Read
+you can add new books from the add button and search for new ones with the ability to add them to your shelves
+
 ## Backend Server
 
  Udactiy've provided a backend server to develop against. The provided file [`BooksAPI.js`](src/BooksAPI.js) contains the methods needed to perform necessary operations on the backend:
@@ -77,8 +83,3 @@ search(query);
 - These books do not know which shelf they are on. They are raw results only. You'll need to make sure that books have the correct state while on the search page.
 
 
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
