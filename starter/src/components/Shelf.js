@@ -14,31 +14,13 @@ const Shelf = ({ shelfName, shelfChanger, books }) => {
               book.shelf === "currentlyReading" &&
               shelfName === "Currently Reading"
             ) {
-              return (
-                <Book
-                  key={book.id}
-                  book={book}
-                  handler={shelfChanger}
-                />
-              );
+              return <Book key={book.id} book={book} handler={shelfChanger} />;
             }
             if (book.shelf === "wantToRead" && shelfName === "Want to Read") {
-              return (
-                <Book
-                  key={book.id}
-                  book={book}
-                  handler={shelfChanger}
-                />
-              );
+              return <Book key={book.id} book={book} handler={shelfChanger} />;
             }
             if (book.shelf === "read" && shelfName === "Read") {
-              return (
-                <Book
-                  key={book.id}
-                  book={book}
-                  handler={shelfChanger}
-                />
-              );
+              return <Book key={book.id} book={book} handler={shelfChanger} />;
             }
             return null;
           })}
@@ -55,6 +37,7 @@ Book.propTypes = {
   books: PropTypes.array,
 };
 
+// data reference
 /*
 allowAnonLogging: true
 authors: ['William E. Shotts, Jr.']

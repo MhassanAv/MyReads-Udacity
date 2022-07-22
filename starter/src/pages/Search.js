@@ -30,7 +30,7 @@ const Search = ({ books }) => {
   useEffect(() => {
     const searchedBooks = async () => {
       let res;
-      search!== ""&& (res = await API.search(search));
+      search !== "" && (res = await API.search(search));
       if (res) {
         console.log(res);
         Array.from(res).map((book) => {
@@ -72,16 +72,9 @@ const Search = ({ books }) => {
       </div>
       <div className="search-books-results">
         <ol className="books-grid">
-          {
-          showingBooks.length > 0 ? (
+          {showingBooks.length > 0 ? (
             Array.from(showingBooks).map((book) => {
-              return (
-                <Book
-                  key={book.id}
-                  book={book}
-                  handler={changeHandler}
-                />
-              );
+              return <Book key={book.id} book={book} handler={changeHandler} />;
             })
           ) : (
             <div></div>

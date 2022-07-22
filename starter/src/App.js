@@ -32,19 +32,25 @@ function App() {
   return (
     <div className="app">
       <Routes>
-        <Route path="*" element={<div
-        style={{
-          position:'absolute',
-          top:'50%',
-          left:'50%',
-          transform: `translate(${-50}%, ${-50}%)`,
-          fontSize:'45px',
-          animationName:'error',
-          animationDuration:`${2.5}s`,
-          animationIterationCount:'infinite',
-        }}
-        ><h1>404 Not Found</h1>
-        </div>}/>
+        <Route
+          path="*"
+          element={
+            <div
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: `translate(${-50}%, ${-50}%)`,
+                fontSize: "45px",
+                animationName: "error",
+                animationDuration: `${2.5}s`,
+                animationIterationCount: "infinite",
+              }}
+            >
+              <h1>404 Not Found</h1>
+            </div>
+          }
+        />
         <Route exact path="/search" element={<Search books={books} />} />
         <Route
           exact
