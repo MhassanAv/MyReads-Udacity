@@ -18,7 +18,6 @@ function App() {
     getBooks();
   }, [books]);
 
-
   const changeHandler = (newBookShelf, id) => {
     books.map((book) => {
       if (book.id === id) {
@@ -30,15 +29,10 @@ function App() {
     });
   };
 
-
   return (
     <div className="app">
       <Routes>
-        <Route
-          exact
-          path="/search"
-          element={<Search/>}
-        />
+        <Route exact path="/search" element={<Search books={books} />} />
         <Route
           exact
           path="/"

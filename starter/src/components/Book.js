@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-const Book = ({ id, author, title, url, handler ,shelf }) => {
-  
+const Book = ({ id, author, title, url, handler, shelf }) => {
+  const [newShelf, setNewShelf] = useState(shelf);
 
   const handleChange = (event) => {
-    const newState = event.target.value
-    handler (newState,id);
+    handler(event.target.value, id);
+    setNewShelf(event.target.value);
   };
 
   return (
@@ -22,7 +22,7 @@ const Book = ({ id, author, title, url, handler ,shelf }) => {
             }}
           ></div>
           <div className="book-shelf-changer">
-            <select onChange={handleChange} value={shelf}>
+            <select onChange={handleChange} value={newShelf}>
               <option value="none" disabled>
                 Move to...
               </option>
@@ -46,6 +46,6 @@ Book.propTypes = {
   title: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   handler: PropTypes.func.isRequired,
-  shelf: PropTypes.string.isRequired
+  shelf: PropTypes.string.isRequired,
 };
 export default Book;

@@ -1,14 +1,15 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Book from "../components/Book";
 import * as API from "../BooksAPI";
+import PropTypes from "prop-types";
 
-const Search = () => {
+const Search = ({ books }) => {
   const [search, setSearch] = useState("");
-  const [storeBooks, setStoreBooks] = useState([])
+  const [storeBooks, setStoreBooks] = useState([]);
 
   const updateSearch = (search) => {
-    setSearch(search);
+    setSearch(search.trim());
   };
 
   const changeHandler = (newBookShelf, id) => {
@@ -16,30 +17,43 @@ const Search = () => {
       if (book.id === id) {
         API.update(book, newBookShelf);
         return null;
-      } else {
-        return null;
       }
+      return null;
     });
   };
 
-  useEffect(() =>{
-       const searchedBooks = async()=>{
-       let res;
-       search !== "" && (res = await API.search(search));
-       if(res){
-       Array.from(res).map((book) =>book.shelf="none")
-       setStoreBooks(res);
-       }
-       if(!res){
-        setStoreBooks([]);
-       }
-    }
-    searchedBooks();
-  },[search])
+  //i nested 2 maps together because the update api dosn't affect the data coming from the search screen
+  //if there is a simpler way please let me know
 
+  useEffect(() => {
+    const searchedBooks = async () => {
+      let res;
+      search !== "" && (res = await API.search(search));
+      if (res) {
+        Array.from(res).map((book) => {
+          return (book.shelf = "none");
+        });
+
+        Array.from(res).map((book) => {
+          books.map((b) => {
+            if (b.id === book.id) {
+              book.shelf = b.shelf;
+            }
+            return null;
+          });
+          return null;
+        });
+        setStoreBooks(res);
+      }
+      if (!res) {
+        setStoreBooks([]);
+      }
+    };
+    searchedBooks();
+  }, [search]);
 
   const showingBooks =
-    search === "" && storeBooks.length=== 0
+    (search==="" && storeBooks.length === 0)
       ? []
       : (Array.from(storeBooks).filter((b) =>
           b.title.toLowerCase().includes(search.toLowerCase())
@@ -62,24 +76,30 @@ const Search = () => {
       </div>
       <div className="search-books-results">
         <ol className="books-grid">
-          {showingBooks.length>0 ? (
-           Array.from(showingBooks).map((book) => {
-            return (
-              <Book
-                id={book.id}
-                key={book.id}
-                author={book.authors}
-                title={book.title}
-                url={book.imageLinks.thumbnail}
-                shelf={book.shelf}
-                handler={changeHandler}
-              />
-            );
-          })):(<div></div>)
-          }
+          {showingBooks.length > 0 ? (
+            Array.from(showingBooks).map((book) => {
+              return (
+                <Book
+                  id={book.id}
+                  key={book.id}
+                  author={book.authors}
+                  title={book.title}
+                  url={book.imageLinks ? book.imageLinks.thumbnail : ""}
+                  shelf={book.shelf}
+                  handler={changeHandler}
+                />
+              );
+            })
+          ) : (
+            <div></div>
+          )}
         </ol>
       </div>
     </div>
   );
+};
+
+Search.propTypes = {
+  books: PropTypes.array,
 };
 export default Search;

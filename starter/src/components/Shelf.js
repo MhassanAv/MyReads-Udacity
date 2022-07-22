@@ -2,10 +2,7 @@ import React from "react";
 import Book from "./Book";
 import PropTypes from "prop-types";
 
-
-const Shelf = ({ shelfName,shelfChanger,books }) => {
-
-
+const Shelf = ({ shelfName, shelfChanger, books }) => {
   //TODO : change the books object and save it's state
   return (
     <div className="bookshelf">
@@ -24,7 +21,7 @@ const Shelf = ({ shelfName,shelfChanger,books }) => {
                   author={book.authors}
                   title={book.title}
                   url={book.imageLinks.thumbnail}
-                  shelf ={book.shelf}
+                  shelf={book.shelf}
                   handler={shelfChanger}
                 />
               );
@@ -37,7 +34,7 @@ const Shelf = ({ shelfName,shelfChanger,books }) => {
                   author={book.authors}
                   title={book.title}
                   url={book.imageLinks.thumbnail}
-                  shelf ={book.shelf}
+                  shelf={book.shelf}
                   handler={shelfChanger}
                 />
               );
@@ -50,12 +47,12 @@ const Shelf = ({ shelfName,shelfChanger,books }) => {
                   author={book.authors}
                   title={book.title}
                   url={book.imageLinks.thumbnail}
-                  shelf ={book.shelf}
+                  shelf={book.shelf}
                   handler={shelfChanger}
                 />
               );
             }
-            return null
+            return null;
           })}
         </ol>
       </div>
@@ -67,7 +64,7 @@ export default Shelf;
 Book.propTypes = {
   shelfName: PropTypes.string,
   shelfChanger: PropTypes.func,
-  books: PropTypes.array
+  books: PropTypes.array,
 };
 
 /*
