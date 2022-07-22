@@ -12,8 +12,6 @@ const Search = ({ books }) => {
     setSearch(search);
   };
 
-  const showingBooks = storeBooks;
-
   const changeHandler = (newBookShelf, id) => {
     storeBooks.map((book) => {
       if (book.id === id) {
@@ -71,9 +69,10 @@ const Search = ({ books }) => {
         </div>
       </div>
       <div className="search-books-results">
+        <h3 style={{marginLeft: '20px'}}>Search results({storeBooks.length?storeBooks.length:0})</h3>
         <ol className="books-grid">
-          {showingBooks.length > 0 ? (
-            Array.from(showingBooks).map((book) => {
+          {storeBooks.length > 0 ? (
+            Array.from(storeBooks).map((book) => {
               return <Book key={book.id} book={book} handler={changeHandler} />;
             })
           ) : (
