@@ -24,7 +24,7 @@ const Main = ({ books, shelfChanger }) => {
         </div>
       </div>
       <div className="open-search">
-        <Link to="/search">Add a book</Link>
+        <Link to="/MyReads-Udacity/search">Add a book</Link>
       </div>
     </div>
   );

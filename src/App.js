@@ -51,9 +51,9 @@ function App() {
             </div>
           }
         />
-        <Route path="/search" element={<Search books={books} />} />
+        <Route path="/MyReads-Udacity/search" element={<Search books={books} />} />
         <Route
-          path="/"
+          path="/MyReads-Udacity"
           element={<Main books={books} shelfChanger={changeHandler} />}
         />
       </Routes>
