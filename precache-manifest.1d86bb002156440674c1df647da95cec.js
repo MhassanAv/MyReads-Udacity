@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "d2c568c7922b533cb236",
+    "revision": "84380317206a8e74a71b",
     "url": "/MyReads-Udacity/static/css/main.1a65ac7f.chunk.css"
   },
   {
-    "revision": "d2c568c7922b533cb236",
-    "url": "/MyReads-Udacity/static/js/main.d2c568c7.chunk.js"
+    "revision": "84380317206a8e74a71b",
+    "url": "/MyReads-Udacity/static/js/main.84380317.chunk.js"
   },
   {
     "revision": "d3742dc16a3fc6e7a518",
@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/MyReads-Udacity/static/media/arrow-back.3d1a645f.svg"
   },
   {
-    "revision": "0ccd03322261bef4a8a79761cb0f95f4",
+    "revision": "c637e68ee732c5533a211145859ebb37",
     "url": "/MyReads-Udacity/index.html"
   }
 ];
