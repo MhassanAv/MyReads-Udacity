@@ -51,9 +51,8 @@ function App() {
             </div>
           }
         />
-        <Route exact path="/search" element={<Search books={books} />} />
+        <Route path="/search" element={<Search books={books} />} />
         <Route
-          exact
           path="/"
           element={<Main books={books} shelfChanger={changeHandler} />}
         />
