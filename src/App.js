@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
@@ -51,7 +50,10 @@ function App() {
             </div>
           }
         />
-        <Route path="/MyReads-Udacity/search" element={<Search books={books} />} />
+        <Route
+          path="/MyReads-Udacity/search"
+          element={<Search books={books} />}
+        />
         <Route
           path="/MyReads-Udacity"
           element={<Main books={books} shelfChanger={changeHandler} />}

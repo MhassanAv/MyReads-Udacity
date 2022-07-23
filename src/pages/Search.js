@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Book from "../components/Book";
 import * as API from "../BooksAPI";
+import { DebounceInput } from "react-debounce-input";
 import PropTypes from "prop-types";
 
 const Search = ({ books }) => {
@@ -60,16 +61,19 @@ const Search = ({ books }) => {
           Close
         </Link>
         <div className="search-books-input-wrapper">
-          <input
+          <DebounceInput
             type="text"
             placeholder="Search by title, author, or ISBN"
-            value={search}
+            minLength={1}
+            debounceTimeout={500}
             onChange={(event) => updateSearch(event.target.value)}
           />
         </div>
       </div>
       <div className="search-books-results">
-        <h3 style={{marginLeft: '20px'}}>Search results({storeBooks.length?storeBooks.length:0})</h3>
+        <h3 style={{ marginLeft: "20px" }}>
+          Search results({storeBooks.length ? storeBooks.length : 0})
+        </h3>
         <ol className="books-grid">
           {storeBooks.length > 0 ? (
             Array.from(storeBooks).map((book) => {
