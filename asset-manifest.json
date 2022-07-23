@@ -1,14 +1,14 @@
 {
-  "main.css": "/MyReads-Udacity/static/css/main.cca74a32.chunk.css",
-  "main.js": "/MyReads-Udacity/static/js/main.4c16420d.chunk.js",
-  "main.js.map": "/MyReads-Udacity/static/js/main.4c16420d.chunk.js.map",
+  "main.css": "/MyReads-Udacity/static/css/main.fa9b18f2.chunk.css",
+  "main.js": "/MyReads-Udacity/static/js/main.0fa65b8d.chunk.js",
+  "main.js.map": "/MyReads-Udacity/static/js/main.0fa65b8d.chunk.js.map",
   "static/js/1.2995f50c.chunk.js": "/MyReads-Udacity/static/js/1.2995f50c.chunk.js",
   "static/js/1.2995f50c.chunk.js.map": "/MyReads-Udacity/static/js/1.2995f50c.chunk.js.map",
   "runtime~main.js": "/MyReads-Udacity/static/js/runtime~main.d182a2eb.js",
   "runtime~main.js.map": "/MyReads-Udacity/static/js/runtime~main.d182a2eb.js.map",
-  "static/media/App.css": "/MyReads-Udacity/static/media/add.bb9363b8.svg",
-  "static/css/main.cca74a32.chunk.css.map": "/MyReads-Udacity/static/css/main.cca74a32.chunk.css.map",
+  "static/media/App.css": "/MyReads-Udacity/static/media/arrow-drop-down.78c6f53b.svg",
+  "static/css/main.fa9b18f2.chunk.css.map": "/MyReads-Udacity/static/css/main.fa9b18f2.chunk.css.map",
   "index.html": "/MyReads-Udacity/index.html",
-  "precache-manifest.d4b3ebab78228d44ede7283ad7ec4252.js": "/MyReads-Udacity/precache-manifest.d4b3ebab78228d44ede7283ad7ec4252.js",
+  "precache-manifest.1d46e48a3270168b5ce27e06bea0b1db.js": "/MyReads-Udacity/precache-manifest.1d46e48a3270168b5ce27e06bea0b1db.js",
   "service-worker.js": "/MyReads-Udacity/service-worker.js"
 }
