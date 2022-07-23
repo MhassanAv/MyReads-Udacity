@@ -1,11 +1,12 @@
 # MyReads Project
 
 This my attempt for Udacity's React Fundamentals Cross-Skilling Project
+
 - I found it very intersting and i have learnd much from it everytime i find an issue or face a bug
 - Using react makes things much easier than vanilla js and it even makes you better with our js skills
 
+## Instractions
 
-## Instractions 
 To get started developing right away:
 
 - install all project dependencies with `npm install`
@@ -32,8 +33,11 @@ src
     ├── index.css 
     └── index.js
 ```
+
 ## Description
+
 MyReads app is designed to arrange your books into different shelves as desired
+
 - Currently Reading
 - Want To Read
 - Read
@@ -81,5 +85,3 @@ search(query);
 - query: `<String>`
 - Returns a Promise which resolves to a JSON object containing a collection of a maximum of 20 book objects.
 - These books do not know which shelf they are on. They are raw results only. You'll need to make sure that books have the correct state while on the search page.
-
-
