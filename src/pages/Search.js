@@ -31,7 +31,6 @@ const Search = ({ books }) => {
       let res;
       search !== "" && (res = await API.search(search));
       if (res) {
-        console.log(res);
         Array.from(res).map((book) => {
           return (book.shelf = "none");
         });
