@@ -36,7 +36,7 @@ src
 
 ## Description
 
-MyReads app is designed to arrange your books into different shelves as desired
+MyReads app is designed to arrange your books on different shelves as desired
 
 - Currently Reading
 - Want To Read
